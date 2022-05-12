@@ -222,18 +222,107 @@
 #     given_exit=input("please provide exit  ")
 # print("you are finally out")
 
-import random
+# import random
 
-answer=random.randint(1,1000)
-for char in str(answer):
-    print(chr(65+int(char)),end="")
-print()
-temp=int(input("enter a number "))
-while temp!=answer:
-    if(answer>temp):
-        temp=int(input("please guess higher "))
-    else:
-        temp=int(input("please guess lower "))
-print("you guessed it right !")
+# answer=random.randint(1,1000)
+# for char in str(answer):
+#     print(chr(65+int(char)),end="")
+# print()
+# temp=int(input("enter a number "))
+# while temp!=answer:
+#     if(answer>temp):
+#         temp=int(input("please guess higher "))
+#     else:
+#         temp=int(input("please guess lower "))
+# print("you guessed it right !")
 
+#else in a loop
+
+# numbers=[1,45,31,12,60]
+
+# for number in numbers:
+#     if(number%8==0):
+#         print("number not acceptable")
+#         break
+# else:
+#     print("terminated normally , all number are acceptable")
+
+#program
+
+# value=-1
+# choices=["exit","learn python","learn java","learn c++","learn dsa"]
+# given_choices=[]
+# while not value==0:
+#     # for choice in choices:
+#     #     print(f"{choices.index(choice)}. "+choice)  # not the good way 
+#     for index,choice in enumerate(choices):     #good way to use enumerate if want to print index and value
+#         print(f"{index}. "+choice)
+#     value=int(input("enter your choice "))
+#     if value==0:
+#         break
+#     elif not 0<value<len(choices):
+#         print("you choosed invalid option\n please choose again")
+#     else:
+#         print(f"you choosed {choices[value]}")
+#         if choices[value] not in given_choices:
+#             given_choices.append(choices[value])
+#         else:
+#             print("this item already choosen ")
+#         print(f"your list now contains {given_choices}")
+# print(given_choices)
+
+#lists  ->mutable
+
+# computer_parts=["computer","monitor","keyboard","mouse","mouse mat"]
+
+# print(computer_parts[2])
+# for parts in computer_parts:
+#     print(parts)
+# print(computer_parts[0:3])
+# print(computer_parts[-1])
+
+# result=True
+# another_result=result
+# print(id(result))
+# print(id(another_result))
+
+# result="correct">
+# another_result=result
+# print(id(result))
+# print(id(another_result))
+# result+="ion"
+# print(id(result))
+# print(id(another_result))
+
+# print('*'*50)
+# shopping_list=["milk","pasta","eggs","spam","bread","rice"]
+# another_list=shopping_list
+# print(id(shopping_list))
+# print(id(another_list))
+# print("-"*50)
+# shopping_list+=["cookies"]
+# print(id(shopping_list))
+# print(id(another_list)) 
+# print(another_list)  
+
+# even=[2,4,6,8]
+# odd=[1,3,5,7,9]
+
+# print(min(even))
+# print(max(even))
+# print(min(odd))
+# print(max(odd))
+# print()
+# print(len(even))
+# print(len(odd))
+
+# print("mississippi".count("iss"))
+
+
+mylist=["hello","hi"]
+mylist.append("thanks")
+mylist.append(3)
+list1=[2,"welcome"]
+mylist.extend(list1)
+print(mylist)
 
