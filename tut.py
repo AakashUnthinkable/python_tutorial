@@ -319,10 +319,69 @@
 # print("mississippi".count("iss"))
 
 
-mylist=["hello","hi"]
-mylist.append("thanks")
-mylist.append(3)
-list1=[2,"welcome"]
-mylist.extend(list1)
-print(mylist)
+# mylist=["hello","hi"]
+# mylist.append("thanks")
+# mylist.append("good morning")
+# list1=["how are you","welcome"]
+# mylist.extend(list1)
+# print(mylist)
 
+# mylist.sort()
+# print(mylist)
+# mylist.sort(reverse=True)
+# print(mylist)
+
+# pangram=sorted("The quick brown fox jumps over the lazy dog",key=str.casefold)
+# print(pangram)
+
+# names=["Aakash","graham","Nikhil","vivek","sunil","Dev"]
+# names.sort(key=str.casefold)
+# print(names)
+
+# empty_list=[]
+# digits=sorted("87031246")
+# digits=list("87031246")
+# print(digits)
+# print()
+
+# more_digits=digits.copy()
+# print(more_digits is digits) #another way for checking if have same id
+# print(digits==more_digits)
+
+#replacing a slice
+# computer_parts=["cpu","monitor","keyboard","mouse","mouse mat"]
+# print(computer_parts)
+
+# computer_parts[3:]="trackball"
+# computer_parts[3:]=["trackball"]
+# print(computer_parts)
+
+#deleting list data
+
+
+
+data=[4,5,104,105,110,120,130,140,150,160,170]
+# print(data)
+# del data[0:2]
+# del data[7:]
+# print(data)
+print(data)
+min_value=104
+max_value=150
+# for index,value in enumerate(data):
+    # if value<min_value or value>max_value: 
+        # del data[index]                     # not giving expected output
+# print(data)
+
+#iterating list backward
+# for index in range(len(data)-1,-1,-1):
+#      if data[index]<min_value or data[index]>max_value: 
+#         del data[index]                     #  giving expected output
+# print(data)
+
+original_last_index=len(data)-1
+for index,value in enumerate(reversed(data)):
+    if value<min_value or value>max_value:
+        del data[original_last_index-index]
+        print(original_last_index-index)
+print(data)
