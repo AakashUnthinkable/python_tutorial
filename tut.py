@@ -500,16 +500,16 @@
 
 #nesting list and tuple
 
-albums=[("welcome to my Nightmare","Alice Cooper",1975),
-         ("Bad Company","Bad company",1974),
-         ("Nightflight","Budgie",1981),
-         ("More Mayhem","Emilda May",2011),
-         ("Ride the Lightning","Metallica",1984),
-         ]
-print(len(albums))
+# albums=[("welcome to my Nightmare","Alice Cooper",1975),
+#          ("Bad Company","Bad company",1974),
+#          ("Nightflight","Budgie",1981),
+#          ("More Mayhem","Emilda May",2011),
+#          ("Ride the Lightning","Metallica",1984),
+#          ]
+# print(len(albums))
 
-for album_name,artist,year in albums:  #unpacking the tuple
-    print(f"Album: {album_name} ,Artist:{artist} , Year:{year} ")
+# for album_name,artist,year in albums:  #unpacking the tuple
+#     print(f"Album: {album_name} ,Artist:{artist} , Year:{year} ")
 
 
 #constants in python
@@ -519,10 +519,107 @@ for album_name,artist,year in albums:  #unpacking the tuple
 
 #Function in python
 
-def multiply():
-    result=10.5*4
-    return result
+# def multiply(x,y):
+#     result=x*y
+#     return result
 
-answer=multiply()
-print(answer)
-print(multiply())
+
+# answer=multiply(10.5,4)
+# print(answer)
+# print(multiply(9,7))  
+
+# for val in range(1,5):
+#     two_times=multiply(2,val)
+#     print(two_times) 
+
+# def is_palindrome(str):
+    # if(str==(str[::-1])):
+        # return True
+    # else:
+        # return False
+    # return str.casefold()==str[::-1].casefold()
+
+
+# print(is_palindrome("Radar"))
+
+# def is_palindrome_sentence(sentence):
+#     str=""
+#     for char in sentence:
+#         if char.isalnum():
+#             str+=char
+#     # return str.casefold()==str[::-1].casefold()
+#     return is_palindrome(str)  #function calling function
+
+# sentence=input("enter a sentence ")
+# print(is_palindrome_sentence(sentence))
+
+# def adder(a:int,b=10)->int:   #default arguments and annotation
+#     """
+#     Docstring:
+#     add two number and by default one number is 10
+#     """  
+#     return a+b
+
+# print(adder(4))
+# print(adder(a=5)) #keyword arguments
+# print(adder(2,3))
+ 
+# print(adder.__doc__)
+# help(adder) 
+
+# def fibonacci(n):
+#     if(n==0):
+#         return 0
+#     elif(n==1):
+#         return 1
+#     else:
+#         return fibonacci(n-1) + fibonacci(n-2)
+
+# print(fibonacci(20))
+
+#printing in color
+ 
+# RED='\u001b[31m'
+# RESET='\u001b[0m'
+# print(RED,"this will be in red colour")
+# print("and so is this")
+# print(RESET,"but not this")
+
+#*args
+
+# numbers=(0,1,2,3,4,5)
+
+# print(numbers,sep=";")
+# print(*numbers,sep=";")  # * will unpack tuple here
+# print(0,1,2,3,4,5,sep=";")
+
+# def test_star(*args):
+#     print(args)
+#     for x in args:
+#         print(x)
+
+# test_star(0,1,2,3,4,5)
+
+# def func(p1,p2,*args,k,**kwargs):
+#     print("positional-or-keyword:...{}, {} ".format(p1,p2))
+#     print("var-positional (*args):...{} ".format(args))
+#     print("keyword:....{} ".format(k))
+#     print("var-keyword:....{} ".format(kwargs))
+
+# func(1,2,3,4,5,k=6,key1=7,key2=8)
+
+#binary
+
+# for i in range(17):
+#     print("{0:>2} in binary is {0:>08b} ".format(i))
+
+for i in range(17):
+    print("{0:>2} in hexadecimal  is {0:>02x} ".format(i))
+
+x=0x20   #x represent hexadecimal number
+y=0x0a
+print(x)
+print(y)
+print(x*y)
+
+print(0b001010001)
