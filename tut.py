@@ -613,13 +613,80 @@
 # for i in range(17):
 #     print("{0:>2} in binary is {0:>08b} ".format(i))
 
-for i in range(17):
-    print("{0:>2} in hexadecimal  is {0:>02x} ".format(i))
+# for i in range(17):
+#     print("{0:>2} in hexadecimal  is {0:>02x} ".format(i))
 
-x=0x20   #x represent hexadecimal number
-y=0x0a
-print(x)
-print(y)
-print(x*y)
+# x=0x20   #x represent hexadecimal number
+# y=0x0a
+# print(x)
+# print(y)
+# print(x*y)
 
-print(0b001010001)
+# print(0b001010001) 
+
+#Dictionary and sets    -> not sequence so can't be accessed by index
+
+
+
+
+vehicles={
+    'dream':'Honda 250T',
+    'roadster':'BMW R1100',
+    'er5':'Kawasaki ER5',
+    'can-am':'Bombardier Can-Am 250',
+    'jimny':'Suzuki Jimny 1.5'
+}
+
+my_car=vehicles['jimny']   #will give keyerror when key not matched
+print(my_car)
+
+learner=vehicles.get("er5")  #will give none when key not match exactly
+print(learner)
+print()
+# for key in vehicles:                    # use .items() method for more efficiency
+#     print(key,vehicles[key],sep=" : ")
+
+vehicles["fighter"]="Rafael"
+vehicles["toy"]="glider"
+
+#upgrading
+vehicles["fighter"]="F-35"
+
+#deleting
+# del vehicles["fighter"] #will give error when key not exists
+# vehicles.pop("f1",None)  #will not give error when key not exists
+# result=vehicles.pop("f1",None)
+
+result=vehicles.pop("fighter","Not present")
+print(result)
+for key,value in vehicles.items():
+    print(key,value,sep=" : ") 
+
+#using in with dictionary
+print("toy" in vehicles)  # check only key not values
+print("glider" in vehicles)
+
+#set default method
+
+pantry={
+    "milk":450,
+    "potatato":2,
+}
+
+chicken_quantity=pantry.setdefault("chicken",0)
+print(f"chicken: {chicken_quantity}")
+beans_quantity=pantry.get("ketchup",0)
+print(f"beans: {beans_quantity}")
+
+print(pantry)
+
+from getpass import getpass
+
+# a=getpass("enter name") # similar to input but not show while typing
+# print(a)
+
+pantry_items=['chicken','spam','egg','bread','lemon']
+
+new_dict=dict.fromkeys(pantry_items)
+new_dict=dict.fromkeys(pantry_items,0)
+print(new_dict)
