@@ -629,64 +629,256 @@
 
 
 
-vehicles={
-    'dream':'Honda 250T',
-    'roadster':'BMW R1100',
-    'er5':'Kawasaki ER5',
-    'can-am':'Bombardier Can-Am 250',
-    'jimny':'Suzuki Jimny 1.5'
+# vehicles={
+#     'dream':'Honda 250T',
+#     'roadster':'BMW R1100',
+#     'er5':'Kawasaki ER5',
+#     'can-am':'Bombardier Can-Am 250',
+#     'jimny':'Suzuki Jimny 1.5'
+# }
+
+# my_car=vehicles['jimny']   #will give keyerror when key not matched
+# print(my_car)
+
+# learner=vehicles.get("er5")  #will give none when key not match exactly
+# print(learner)
+# print()
+# # for key in vehicles:                    # use .items() method for more efficiency
+# #     print(key,vehicles[key],sep=" : ")
+
+# vehicles["fighter"]="Rafael"
+# vehicles["toy"]="glider"
+
+# #upgrading
+# vehicles["fighter"]="F-35"
+
+# #deleting
+# # del vehicles["fighter"] #will give error when key not exists
+# # vehicles.pop("f1",None)  #will not give error when key not exists
+# # result=vehicles.pop("f1",None)
+
+# result=vehicles.pop("fighter","Not present")
+# print(result)
+# for key,value in vehicles.items():
+#     print(key,value,sep=" : ") 
+
+# #using in with dictionary
+# print("toy" in vehicles)  # check only key not values
+# print("glider" in vehicles)
+
+# #set default method
+
+# pantry={
+#     "milk":450,
+#     "potatato":2,
+# }
+
+# chicken_quantity=pantry.setdefault("chicken",0)
+# print(f"chicken: {chicken_quantity}")
+# beans_quantity=pantry.get("ketchup",0)
+# print(f"beans: {beans_quantity}")
+
+# print(pantry)
+
+# from getpass import getpass
+
+# # a=getpass("enter name") # similar to input but not show while typing
+# # print(a)
+
+# pantry_items=['chicken','spam','egg','bread','lemon']
+
+# new_dict=dict.fromkeys(pantry_items)
+# new_dict=dict.fromkeys(pantry_items,0) # 0 here denoting default value
+# print(new_dict)
+
+# keys=pantry.keys()
+# print(keys)
+
+# pantry2={
+#     "milk":2000,
+# }
+# #dict update method  
+# pantry.update(pantry2)
+
+# for items,value in pantry.items():
+#     print(items,value)
+
+# #dict value method
+# v=pantry.values()
+# print(v)
+
+# pantry["potatato"]=3
+# print(pantry)
+
+# print("potatato" in pantry)
+# print("milk" in pantry)
+
+# #Reference to mutable objects
+# animals={
+#     "lion":"scary",
+#     "elephant":"big",
+#     "teddy":"cuddly",
+# }
+# # things=animals
+# #if we want to make a copy then we use copy methods 
+# things=animals.copy()
+# animals["teddy"]="toy"
+# print(things["teddy"])
+
+#shallow copy
+
+# animals={
+#     "lion":["scary","big","cat"],
+#     "elephant":["big","grey","wrinkled"],
+#     "teddy":["cuddly","stuffed"]
+# }
+# things=animals.copy()
+# things["teddy"].append("toy")  # animals will also be changed as it is shallow copy
+# print(animals)
+# print(things)
+# print(id(animals["teddy"]))
+# print(id(things["teddy"]))
+# #deep copy 
+
+# import copy
+# animals={
+#     "lion":["scary","big","cat"],
+#     "elephant":["big","grey","wrinkled"],
+#     "teddy":["cuddly","stuffed"]
+# }
+# things=copy.deepcopy(animals)
+# things["teddy"].append("toy")  # animals won't be changed as it is deep copy
+# print(animals)
+# print(things)
+
+# print(id(animals["teddy"]))
+# print(id(things["teddy"]))
+
+# #hashing
+
+# def simple_hash(s):
+#     basic_hash=ord(s[0])
+#     return basic_hash%10
+
+# data=[("orange","a sweet, orange,citrus fruit"),
+#       ("apple","red and good"),
+#       ("lemon","a sour, yello fruit"),
+#       ("grape","small green fruit"),
+#       ("melon","sweet and juicy"),
+# ]
+
+# for key,value in data:
+#     h=simple_hash(key)
+#     # h=hash(key)
+#     print(key,h)
+
+# import hashlib  #hashlib ->secure hash model
+# print(sorted(hashlib.algorithms_guaranteed))
+# print(sorted(hashlib.algorithms_available))
+
+# python_program="""
+# for i in range(10):
+#     print(i)
+# """
+# print(python_program)
+# original_hash=hashlib.sha256(python_program.encode('utf8'))
+# print(f"SHA256: {original_hash.hexdigest()}")
+
+
+# sets  -> do not have any order , we can't use index with sets
+
+# farm_animals={'cow','sheep','hen','goat','horse'}
+# print(farm_animals)
+
+# for animal in farm_animals:
+#     print(animal)
+
+# animal={'sheep','cow','horse','goat','hen'}
+
+# if animal==farm_animals:
+#     print("both set are equal ")
+
+# #checking item in set is fast compared to list as it use hashing
+
+# numbers={}
+# print(type(numbers))
+# # numbers={*""} #unpacking
+# numbers=set()
+# numbers.add(1)  #adding data to sets
+# print(numbers,type(numbers))
+
+# while len(numbers)<4:
+#     next_value=int(input("enter your next value "))
+#     numbers.add(next_value)
+
+#deleting items from set
+# small_ints=set(range(21))
+# print(small_ints)
+# # small_ints.clear()
+# # print(small_ints)
+
+# small_ints.remove(11)
+# small_ints.discard(11) #not give error if element is not present
+# print(small_ints)
+
+# #pop method
+# #set aren't indexable so set pop method not take any arguments like list or dictionary
+# # it pops an arbitrary items from the sets and returns that item
+
+# trail_patients={"denise","eddie","frank","georgia","kenny"}
+
+# while trail_patients:
+#     patient=trail_patients.pop()
+#     print(patient)
+
+# farm_animals={'cow','sheep','hen','goat','horse'}
+# wild_animal={'lion','elephant','horse','goat','tiger','bear'} 
+
+# #union
+# all_animals=farm_animals.union(wild_animal)
+# print(all_animals)
+# all_animals2=farm_animals|wild_animal
+# print(all_animals2)
+
+# #union update ->if we donot create a new variable but updated union in same variable
+
+# farm_animals.update(wild_animal) #or
+# # farm_animals|=wild_animal
+# print(farm_animals)
+
+# evens=set(range(0,30,2))
+# temp={1,2,3,4,5,6,7,8,9,10}
+# #intersection
+# print(evens.intersection(temp))
+# print(evens&temp)
+
+# #set differences
+# print(evens.difference(temp))
+# print(evens-temp)
+
+# #symmetric difference -> opposite of intersection
+
+# print(evens^temp)
+# print(evens.symmetric_difference(temp))   #method also work with list but operator not work with list
+
+#subsets and supersets
+
+animals={
+    'turtle',
+    'horse',
+    'robin',
+    'python',
+    'swallow',
+    'wren',
+    'cat',
 }
-
-my_car=vehicles['jimny']   #will give keyerror when key not matched
-print(my_car)
-
-learner=vehicles.get("er5")  #will give none when key not match exactly
-print(learner)
-print()
-# for key in vehicles:                    # use .items() method for more efficiency
-#     print(key,vehicles[key],sep=" : ")
-
-vehicles["fighter"]="Rafael"
-vehicles["toy"]="glider"
-
-#upgrading
-vehicles["fighter"]="F-35"
-
-#deleting
-# del vehicles["fighter"] #will give error when key not exists
-# vehicles.pop("f1",None)  #will not give error when key not exists
-# result=vehicles.pop("f1",None)
-
-result=vehicles.pop("fighter","Not present")
-print(result)
-for key,value in vehicles.items():
-    print(key,value,sep=" : ") 
-
-#using in with dictionary
-print("toy" in vehicles)  # check only key not values
-print("glider" in vehicles)
-
-#set default method
-
-pantry={
-    "milk":450,
-    "potatato":2,
-}
-
-chicken_quantity=pantry.setdefault("chicken",0)
-print(f"chicken: {chicken_quantity}")
-beans_quantity=pantry.get("ketchup",0)
-print(f"beans: {beans_quantity}")
-
-print(pantry)
-
-from getpass import getpass
-
-# a=getpass("enter name") # similar to input but not show while typing
-# print(a)
-
-pantry_items=['chicken','spam','egg','bread','lemon']
-
-new_dict=dict.fromkeys(pantry_items)
-new_dict=dict.fromkeys(pantry_items,0)
-print(new_dict)
+birds={'robin','swallow','wren'}
+garden_birds={'robin','swallow','wren'}
+print(garden_birds<birds)
+print(garden_birds==birds)
+print(garden_birds<=birds)
+print(birds<=animals)
+print(animals>birds)
+print(animals>=birds)
+print(birds.issubset(animals))
+print(animals.issuperset(birds))
