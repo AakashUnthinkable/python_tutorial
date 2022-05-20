@@ -1,12 +1,14 @@
 # 1. Program to convert the temperature from Celsius to Fahrenheit each weekday
 
-# temperature_celsius=float(input("enter the temperature "))
-# temperature_fahrenheit=((temperature_celsius)*9)/5+32
+
+# temperature_weekday_celsius=[40,42.1,43.5,38.7,37,44.2,45.3]
+# temperature_weekday_celsius_average=sum(temperature_weekday_celsius)/7
+# temperature_fahrenheit=((temperature_weekday_celsius_average)*9)/5+32
 # print(temperature_fahrenheit)
 
 # 2. Calculate a cube of a number greater than 7
 
-# number=int(input("enter a number "))
+# number=13
 # cube=pow(number,3)
 # cube=number*number*number
 # print(cube)
@@ -34,7 +36,7 @@
 # 4. Write a program that prints the numbers from 1 to 50. But for multiples of three print “three” instead of the number and for the multiples of five print “five”. For numbers that are multiples of both three and five print “threefive”.
 
 for num in range(1,51):
-    if(num%15==0):
+    if(num%3==0 and num%5==0):
         print("threefive")
     elif(num%3==0):
         print("three")
