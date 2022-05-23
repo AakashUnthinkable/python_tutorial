@@ -912,89 +912,89 @@
 # for character in reversed(all_lines):
 #     print(character,end='')
 
-with open('aakash.txt','r') as aakash:
-    all_lines=aakash.readline().rstrip()    # we will single line as string
+# with open('aakash.txt','r') as aakash:
+#     all_lines=aakash.readline().rstrip()    # we will single line as string
 
-print(all_lines) 
+# print(all_lines) 
 
-for character in reversed(all_lines):
-    print(character,end='')
+# for character in reversed(all_lines):
+#     print(character,end='')
 
-print()
-# strip, istrip and rstrip
-char='"'
-no_quotes=all_lines.strip(char)
-print(no_quotes)
+# print()
+# # strip, istrip and rstrip
+# char='"'
+# no_quotes=all_lines.strip(char)
+# print(no_quotes)
 
-char='". Myh'
-check=all_lines.strip(char)  #strip check the charater in start and end.
-#if that character is present then it will remove it
-print(check)
+# char='". Myh'
+# check=all_lines.strip(char)  #strip check the charater in start and end.
+# #if that character is present then it will remove it
+# print(check)
 
-# removeprefix and removesuffix method ->added in python 3.9 so we will write function for this
+# # removeprefix and removesuffix method ->added in python 3.9 so we will write function for this
 
-def removeprefix(string,prefix):
-    if string.startswith(prefix):
-        return string[len(prefix):]
-    else:
-        return string[:]
+# def removeprefix(string,prefix):
+#     if string.startswith(prefix):
+#         return string[len(prefix):]
+#     else:
+#         return string[:]
 
-def removesuffix(string,suffix):
-    if suffix and string.endswith(suffix):
-        return string[:-len(suffix)]
-    else:
-        return string[:]
+# def removesuffix(string,suffix):
+#     if suffix and string.endswith(suffix):
+#         return string[:-len(suffix)]
+#     else:
+#         return string[:]
 
-# p_removed=all_lines.removeprefix('". Myh')  this is not available in python 3.8
-# s_removed=all_lines.removesuffix('gh. "')   this is not available in python 3.8
+# # p_removed=all_lines.removeprefix('". Myh')  this is not available in python 3.8
+# # s_removed=all_lines.removesuffix('gh. "')   this is not available in python 3.8
 
-print()
-p_removed=removeprefix(all_lines,'"My ')
-s_removed=removesuffix(all_lines,'gh."')
-print(p_removed)
-print(s_removed)
+# print()
+# p_removed=removeprefix(all_lines,'"My ')
+# s_removed=removesuffix(all_lines,'gh."')
+# print(p_removed)
+# print(s_removed)
 
-#parsing -> making sense of data
+# #parsing -> making sense of data
 
-countries={}
-input_filename='country_info.txt'
-with open(input_filename) as file:
-    file.readline()     #for loop will start from second line as we have already read first line
-    for row in file:
-        data=row.strip('\n').split('|')
-        country,capital,cc,cc3,iac =data
-        # print(country,capital,cc,cc3,iac)
-        # print(data) 
-        country_dict={
-            'name':country,
-            'capital':capital,
-            'country_code':cc,
-            'cc3':cc3,
-            'iac':iac,
-        }
-        print(country_dict)
-        countries[country.casefold()]=country_dict
+# countries={}
+# input_filename='country_info.txt'
+# with open(input_filename) as file:
+#     file.readline()     #for loop will start from second line as we have already read first line
+#     for row in file:
+#         data=row.strip('\n').split('|')
+#         country,capital,cc,cc3,iac =data
+#         # print(country,capital,cc,cc3,iac)
+#         # print(data) 
+#         country_dict={
+#             'name':country,
+#             'capital':capital,
+#             'country_code':cc,
+#             'cc3':cc3,
+#             'iac':iac,
+#         }
+#         print(country_dict)
+#         countries[country.casefold()]=country_dict
 
-print(countries)
+# print(countries)
 
-data={
-    'neem','mango','peepal','banyan','sandalwood'
-}
+# data={
+#     'neem','mango','peepal','banyan','sandalwood'
+# }
 
-# with open('tree.txt','w') as plants:     #print method convert object into string 
+# # with open('tree.txt','w') as plants:     #print method convert object into string 
+# #     for plant in data:
+# #         print(plant,file=plants)
+
+# with open('tree.txt','w') as plants:       #write method write as it is
 #     for plant in data:
-#         print(plant,file=plants)
+#         plants.write(plant)
 
-with open('tree.txt','w') as plants:       #write method write as it is
-    for plant in data:
-        plants.write(plant)
-
-# with open('tree.txt','w') as plants:       #not give error as print convert int to string
-#     for i in range(10):
-#         print(i,file=plants)
+# # with open('tree.txt','w') as plants:       #not give error as print convert int to string
+# #     for i in range(10):
+# #         print(i,file=plants)
                 
-with open('tree.txt','w') as plants:       #will give error if we not typecast int to string
-    for i in range(10):
-        plants.write(str(i))
+# with open('tree.txt','w') as plants:       #will give error if we not typecast int to string
+#     for i in range(10):
+#         plants.write(str(i))
 
-# with open('tree.txt',encoding='utf-8') as jabber:  we should provide encoding 
+# # with open('tree.txt',encoding='utf-8') as jabber:  we should provide correct encoding 
