@@ -227,3 +227,21 @@
 #         print(album_dict)
 #         writer.writerow(album_dict)
 
+#seek and tell ->seek used to set position in file . tell give position
+
+#working with binary files
+
+#two built data type python provide- bytes and bytearray
+#bytearray is mutable version of bytes
+
+equation=bytes((207,128,114,194,178))
+print(equation)
+print(type(equation))
+print(len(equation))
+
+for b in equation:
+    print(b,end=',')
+
+print(equation.decode('utf-8'))
+
+#Reading a bitmap file
