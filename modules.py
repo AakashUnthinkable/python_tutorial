@@ -105,28 +105,89 @@
 # for x in sorted(pytz.country_names):
 #     print("{}: {}: {} ".format(x,pytz.country_names[x],pytz.country_timezones.get(x)))
 
-import datetime
-import pytz
+# import datetime
+# import pytz
 
-local_time=datetime.datetime.now()
-utc_time=datetime.datetime.utcnow()
+# local_time=datetime.datetime.now()
+# utc_time=datetime.datetime.utcnow()
 
-print("Naive local time {} ".format(local_time))
-print("Naive UTC {} ".format(utc_time))
+# print("Naive local time {} ".format(local_time))
+# print("Naive UTC {} ".format(utc_time))
 
-aware_local_time=pytz.utc.localize(local_time).astimezone()
-aware_utc_time=pytz.utc.localize(utc_time)
+# aware_local_time=pytz.utc.localize(local_time).astimezone()
+# aware_utc_time=pytz.utc.localize(utc_time)
 
-print("Aware local time {},time zone {}".format(aware_local_time,aware_local_time.tzinfo))
-print("Aware UTC time {},time zone {}".format(aware_utc_time,aware_utc_time.tzinfo))
+# print("Aware local time {},time zone {}".format(aware_local_time,aware_local_time.tzinfo))
+# print("Aware UTC time {},time zone {}".format(aware_utc_time,aware_utc_time.tzinfo))
 
-gap_time=datetime.datetime(2015,10,25,13,0,0)
-print(gap_time.timestamp())
+# gap_time=datetime.datetime(2015,10,25,13,0,0)
+# print(gap_time.timestamp())
 
-s=1445733000
-t=s+(60*60)
-gb=pytz.timezone('GB')
-dt1=pytz.utc.localize(datetime.datetime.utcfromtimestamp(s)).astimezone(gb) #timestamp use localdate
-dt2=pytz.utc.localize(datetime.datetime.utcfromtimestamp(t)).astimezone(gb) #so use utcfromtimestamp
-print("{} seconds since the epoch is {} ".format(s,dt1))
-print("{} seconds since the epoch is {} ".format(t,dt2))
+# s=1445733000
+# t=s+(60*60)
+# gb=pytz.timezone('GB')
+# dt1=pytz.utc.localize(datetime.datetime.utcfromtimestamp(s)).astimezone(gb) #timestamp use localdate
+# dt2=pytz.utc.localize(datetime.datetime.utcfromtimestamp(t)).astimezone(gb) #so use utcfromtimestamp
+# print("{} seconds since the epoch is {} ".format(s,dt1))
+# print("{} seconds since the epoch is {} ".format(t,dt2))
+
+#create a program that allow a user to choose one of 9 time zones
+# import datetime
+# import pytz
+
+# available_zone={'1':'Africa/Tunis',
+#                 '2':'Asia/Kolkata',
+#                 '3':'Australia/Adelaide',
+#                 '4':'Europe/Brussels',
+#                 '5':'Europe/London',
+#                 '6':'Japan',
+#                 '7':'Pacific/Tahiti',
+#                 '8':'US/Hawaii',
+#                 '9':'Zulu',
+
+#                 }
+# print("Please choose a time zone ( or 0 to quit):")
+# for place in sorted(available_zone):
+#     print("\t{}. {} ".format(place,available_zone[place]))
+
+# while True:
+#     choice=input()
+#     if choice=='0':
+#         break
+#     if choice in available_zone.keys():
+#         tz_to_display=pytz.timezone(available_zone[choice])
+#         world_time=datetime.datetime.now(tz=tz_to_display)
+#         print("The time in {} is {} {} ".format(available_zone[choice],world_time.strftime('%A %x %X %z'),world_time.tzname()))
+#         print("Local time is {} ".format(datetime.datetime.now().strftime('%A %x %X')))
+#         print("UTC time is {} ".format(datetime.datetime.now().strftime('%A %x %X')))
+#         print()
+
+#Tkinter
+from tkinter import Button
+
+
+try:
+    import tkinter 
+except ImportError: # python 2
+    import Tkinter as tkinter
+print(tkinter.TkVersion)
+print(tkinter.TclVersion)
+
+# tkinter._test()
+mainWindow=tkinter.Tk()
+mainWindow.title("Hello World")
+mainWindow.geometry('640x480')
+
+label=tkinter.Label(mainWindow,text="Hello World")
+label.pack(side='top')
+canvas=tkinter.Canvas(mainWindow,relief='raised',borderwidth=1)
+# canvas.pack(side='left',fill=tkinter.BOTH,expand=True)
+canvas.pack(side='left')
+
+button1=tkinter.Button(mainWindow,text='button1')
+button2=tkinter.Button(mainWindow,text='button2')
+button3=tkinter.Button(mainWindow,text='button3')
+button1.pack(side='left',anchor='n')
+button2.pack(side='left',anchor='s')
+button3.pack(side='left',anchor='e')
+mainWindow.mainloop()
