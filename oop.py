@@ -99,57 +99,62 @@
 #     tim.show_balance()
 #     tim.show_transaction()
 
-class Song:
-    """class to represent a song
-    title(str):The title of the song
-    artist(Artist):An Artist object representing the song creator.
-    duration(int):The duration of song in seconds. may be zero
+# class Song:
+#     """class to represent a song
+#     title(str):The title of the song
+#     artist(Artist):An Artist object representing the song creator.
+#     duration(int):The duration of song in seconds. may be zero
 
-    Attributes:
-    title(str):
-    artist(Artist):
-    duration(int):
-    """
-    def __init__(self,title,artist,duration=0):
-        """
-        song init method
-        Args:
-        title:
-        artist:
-        duration(optional)
-        """
-        self.title=title
-        self.artist=artist
-        self.duration=duration
+#     Attributes:
+#     title(str):
+#     artist(Artist):
+#     duration(int):
+#     """
+#     def __init__(self,title,artist,duration=0):
+#         """
+#         song init method
+#         Args:
+#         title:
+#         artist:
+#         duration(optional)
+#         """
+#         self.title=title
+#         self.artist=artist
+#         self.duration=duration
 
-print(Song.__doc__)  #printing the docstring
-print(Song.__init__.__doc__)
-Song.__init__.__doc__="""updating the docstring"""
-# help(Song)
-#raw string
+# print(Song.__doc__)  #printing the docstring
+# print(Song.__init__.__doc__)
+# Song.__init__.__doc__="""updating the docstring"""
+# # help(Song)
+# #raw string
 
-a_string="this is \na string split\t\t and tabbed"
-print(a_string)
+# a_string="this is \na string split\t\t and tabbed"
+# print(a_string)
 
-raw_string=r"this  is \n string split \t\t and tabbed\\"
-print(raw_string)
+# raw_string=r"this  is \n string split \t\t and tabbed\\"
+# print(raw_string)
 
 
-class Album:
-    def __init__(self,name,year,artist=None):
-        self.name=name
-        self.year=year
-        if artist is None:
-            self.artist=Artist("various Artists")
-        else:
-            self.artist=artist
-        self.tracks=[]
+# class Album:
+#     def __init__(self,name,year,artist=None):
+#         self.name=name
+#         self.year=year
+#         if artist is None:
+#             self.artist=Artist("various Artists")
+#         else:
+#             self.artist=artist
+#         self.tracks=[]
 
-    def add_song(self,song,position=None):
-        if position is None:
-            self.tracks.append(song)
-        else:
-            self.tracks.insert(position,song)
+#     def add_song(self,song,position=None):
+#         if position is None:
+#             self.tracks.append(song)
+#         else:
+#             self.tracks.insert(position,song)
+
+
+# from tkinter import Y
+# from traceback import print_tb
+# from unittest import result
 
 
 # class A:
@@ -160,7 +165,7 @@ class Album:
 # class B(A):
 #     def test1(self):
 #         print("method named test1 of B called")
-#         super().test1()
+#         # super().test1()
 
 
 # class C(A):
@@ -220,3 +225,5 @@ class Album:
 #         self.i = 3 * I
 
 # obj = Derived()
+
+

@@ -1,4 +1,7 @@
 
+# ctrl +f5 -> run python shortcut
+# f1 -> for recently used program in vscode
+
 # print('hello world') #use single quote or double quote
 # print(9*7)
 # print()
@@ -883,3 +886,177 @@
 # print(birds.issubset(animals))
 # print(animals.issuperset(birds))
 
+
+
+
+# REVISION
+
+
+# hello='hello'.upper() #other methods->lower(),
+# #capitalise(),count(),
+# print(hello)
+# print(hello.count('H'))
+
+# print('a'>'Z')
+# print(ord('a')) #oridinal values
+ 
+# #conditionals
+# x=7
+# y=8
+# z=0
+# result1=x==y
+# result2=y>x
+# result3=z<x+2
+# print(result1)
+# print(result2)
+# print(result3)
+
+# # and,or,not -> for chained conditional
+# print(result1 or result2)
+
+# #conditional- if elif else
+
+# x=input("name: ")
+# if x=="Tim":
+#     print("you are greater")
+# elif x=="aakash":
+#     print("you are greatest")
+# else:
+#     print("you are great")
+
+#list -> ordered collection of data,mutable
+
+# x=[4,"hello",True]
+# print(len(x))
+# print(type(x))
+
+# #accessing list items
+# thislist=list(("apple","banana","cherry"))
+# print(thislist[-1])
+# print(thislist[1:])
+
+# for i,element in enumerate(thislist):
+#     print(i,element)
+
+# if "apple" in thislist:
+#     print("yes")
+
+# #changing list items
+# thislist[1]="mango"
+# print(thislist)
+
+# thislist[1:1]=["grape","melon"]
+# print(thislist)
+
+# #insert(position,value) 
+# thislist.insert(3,"kela") 
+# print(thislist)
+
+# #append()
+# thislist.append("aam")
+# print(thislist)
+# #extend() -> can use with any iterable object
+# that_list=["tinda",'ghia','karaila']
+
+# thislist.extend(that_list)
+# print(thislist)
+
+# #remove
+# thislist.remove("kela")
+# print(thislist)
+
+# #pop() -> used to remove from specific position
+
+# thislist.pop(8)
+# thislist.pop() #remove last element
+# print(thislist)
+
+# #del
+# del thislist[3]
+
+# #clear()
+# # thislist.clear()
+# # print(thislist)
+
+# for x in thislist:
+#     print(x)
+
+# for i in range(len(thislist)):
+#     print(thislist[i])
+
+# list comprehension -> shorter syntax
+
+fruits=["apple","banana","cherry","kiwi"]
+
+#create a  new list that fruit have letter a in it
+# new_list=[]
+# for fruit in fruits:
+#     if 'a' in fruit:
+#         new_list.append(fruit)
+
+# print(new_list)
+
+new_list=[fruit for fruit in fruits if "a" in fruit]
+print(new_list)
+
+#sort
+new_list.sort() #ascending
+
+new_list.sort(reverse=True) #descending
+
+#customize sort function
+
+new_list.sort(key=str.lower) #case insensitive sort
+
+def myfun(n):
+    return abs(n-50)
+
+thislist=[100,50,65,82,23]
+thislist.sort(key=myfun)
+print(thislist)
+
+#revese
+
+thislist.reverse()
+print(thislist)
+
+#list2=list1 then it will assign a reference of list1 to list2 so if we make changes then it will reflected to both so use copy methods
+
+thatlist=thislist.copy()
+#or
+mylist=list(thislist)
+#or
+mylist=thislist[:]
+
+#join list
+#1. + operator
+#list3= list1 + list2
+
+#2. extend() method
+
+#3. append() method
+
+#tuple
+
+thistuple=("apple",) #for one item remember the comma otherwise it will be considered as string
+
+#tuple constructor
+thattuple=(("apple","banana"))
+
+#tuple cannot be changed so we can convert it into list and again convert to tuple
+x=("apple","banana","cherry")
+y=list(x)
+y[1]="kiwi"
+x=tuple(x)
+print(x)
+
+y=("orange",)
+x+=y
+print(x)
+# we can delete tuple
+
+x=[[1 for x in range(5)] for i in range(2)]
+print(x)
+
+y=[x for x in range(100) if x%5==0]
+print(y)
