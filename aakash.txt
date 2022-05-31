@@ -1,0 +1,5 @@
+My name is Aakash Singh.
+I am a web developer
+
+i am learning python
+i am writing python program to learn file reading and writing in python
