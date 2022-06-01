@@ -244,37 +244,151 @@
 #         self.i = 3 * I
 
 
-class Player(object):
+# class Player(object):
 
-    def __init__(self,name):
-        self.name=name
-        self._lives=3
-        self.level=1
-        self.score=0
+#     def __init__(self,name):
+#         self.name=name
+#         self._lives=3
+#         self._level=1
+#         self._score=0
 
-    def _get_lives(self):
-        return self._lives
+#     def _get_lives(self):
+#         return self._lives
 
-    def _set_lives(self,lives):
-        if lives>=0:
-            self._lives=lives
-        else:
-            print("lives cannot be negative")
-            self._lives=0 
+#     def _set_lives(self,lives):
+#         if lives>=0:
+#             self._lives=lives
+#         else:
+#             print("lives cannot be negative")
+#             self._lives=0 
 
-    lives=property(_get_lives,_set_lives)
+#     def _get_level(self):
+#         return self._level
 
-    def __str__(self):
-        return ("Name:{0.name}, Lives:{0.lives}, Level:{0.level}, Score {0.score}".format(self))
+#     def _set_level(self,level):
+#         if level>=0:
+#             self._level=level
+#             self.score+=level*100
+#         else:
+#             print("level cannot be negative")
+#             self._level=0 
 
-tim=Player("Tim")
-print(tim.name)
-print(tim.lives)
-tim.lives-=1
-print(tim)
-tim.lives-=1
-print(tim)
-tim.lives-=1
-print(tim)
-tim.lives-=1
-print(tim)
+#     lives=property(_get_lives,_set_lives)
+#     level=property(_get_level,_set_level)
+
+#     @property
+#     def score(self):
+#         return self._score
+
+#     @score.setter
+#     def score(self,score):
+#         self._score=score
+
+#     def __str__(self):
+#         return ("Name:{0.name}, Lives:{0.lives}, Level:{0.level}, Score {0.score}".format(self))
+
+# tim=Player("Tim")
+# print(tim.name)
+# print(tim.lives)
+# tim.lives-=1
+# print(tim)
+# tim.lives-=1
+# print(tim)
+# tim.lives-=1
+# print(tim)
+# tim.lives-=1
+# print(tim)
+# tim.level=4
+# print(tim)
+# tim.score=500
+# print(tim)
+
+
+# class Duck(object):
+
+#     def walk(self):
+#         print("waddle","waddle","waddle")
+
+#     def swim(self):
+#         print("come to it, the water's lovely")
+
+#     def quack(self):
+#         print("Quack quack")
+
+
+# class Penguin(object):
+
+#     def walk(self):
+#         print("waddle,waddle,i can waddle too")
+
+#     def swim(self):
+#         print("Come on in, but it's a bit chilly")
+
+#     def quack(self):
+#         print("i am a penguin")
+
+# def test_duck(duck):
+#     duck.walk()
+#     duck.swim()
+#     duck.quack()
+
+# if __name__=='__main__':
+#     donald=Duck()
+#     test_duck(donald)
+
+#     perry=Penguin()
+#     test_duck(perry)
+
+#composition -> has a relationship
+#composition
+
+# class Salary:
+
+#     def __init__(self,pay,bonus):
+#         self.pay=pay
+#         self.bonus=bonus
+    
+#     def annual_salary(self):
+#         return (self.pay*12)+self.bonus
+
+# class Employee:
+    
+#     def __init__(self,name,age,pay,bonus):
+#         self.name=name
+#         self.age=age
+#         self.obj_salary=Salary(pay,bonus)
+
+#     def total_salary(self):
+#         return self.obj_salary.annual_salary()
+
+# emp=Employee('max',25,15000,10000)
+# print(emp.total_salary())
+
+
+#Aggregation -> part of relationship 
+# class Salary:
+
+#     def __init__(self,pay,bonus):
+#         self.pay=pay
+#         self.bonus=bonus
+    
+#     def annual_salary(self):
+#         return (self.pay*12)+self.bonus
+
+# class Employee:
+    
+#     def __init__(self,name,age,salary):
+#         self.name=name
+#         self.age=age
+#         self.obj_salary=salary
+
+#     def total_salary(self):
+#         return self.obj_salary.annual_salary()
+
+# salary=Salary(15000,10000)
+# emp=Employee('max',25,salary)
+# print(emp.total_salary())
+
+
+# DATABASE - python include SQLite in standard library
+ 
