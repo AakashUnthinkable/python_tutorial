@@ -1041,7 +1041,7 @@ mylist=thislist[:]
 thistuple=("apple",) #for one item remember the comma otherwise it will be considered as string
 
 #tuple constructor
-thattuple=(("apple","banana"))
+thattuple=tuple(("apple","banana"))
 
 #tuple cannot be changed so we can convert it into list and again convert to tuple
 x=("apple","banana","cherry")
@@ -1053,10 +1053,24 @@ print(x)
 y=("orange",)
 x+=y
 print(x)
-# we can delete tuple
+# we can delete whole tuple
+
+#Tuple method
+#count() #index()
 
 x=[[1 for x in range(5)] for i in range(2)]
 print(x)
 
 y=[x for x in range(100) if x%5==0]
 print(y)
+
+list1=[1,2,3]
+list2=[3,4,5]
+list3=list1+list2
+print(list3)
+dict1={1:"one",2:"two"}
+dict2={3:"one",4:"two"}
+dict1.update(dict2)  # update method also work for set
+dict3=dict1
+print(dict3)
+
